@@ -14,4 +14,30 @@ router.get('/',function(req,res,next){
         }
     });
 });
+router.get('/tableInfo', function(req, res, next){
+    Convergence.showTable(function(err,rows){
+        if(err)
+        {
+        res.json(err);
+        }
+        else
+        {
+        res.json(rows);
+        }
+    });
+});
+
+router.get('/feature_fluent', function(req, res, next){
+    Convergence.discrbeTable(function(err,rows){
+        if(err)
+        {
+        res.json(err);
+        }
+        else
+        {
+        res.json(rows);
+        }
+    });
+});
+
 module.exports=router;
